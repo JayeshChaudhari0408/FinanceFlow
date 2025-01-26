@@ -148,7 +148,7 @@ const Dashboard = () => {
                         .sort((a, b) => b.createdAt - a.createdAt)
                         .slice(0, 4)}
                     />
-                    {expenses.length > 8 && (
+                    {expenses.length > 4 && (
                       <Link to="expenses" className="btn btn--dark">
                         View all expenses
                       </Link>
