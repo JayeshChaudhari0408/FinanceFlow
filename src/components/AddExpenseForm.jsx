@@ -8,26 +8,27 @@ import { useFetcher } from "react-router-dom"
 import { PlusCircleIcon } from "@heroicons/react/24/solid"
 
 const getCategory = (name) => {
-  // Define categories based on keywords in the name
-  const foodKeywords = ["coffee", "tea", "burger", "pizza", "food"];
-  const entertainmentKeywords = ["movie", "concert", "game", "show"];
-  const transportKeywords = ["taxi", "bus", "train", "fuel"];
-  const utilitiesKeywords = ["electricity", "water", "internet", "phone"];
+  const categories = {
+    Food: ["coffee", "tea", "burger", "pizza", "food", "restaurant", "snack", "sandwich", "cake", "dinner", "lunch", "breakfast", "fast food", "dessert"],
+    Entertainment: ["movie", "concert", "game", "show", "theater", "music", "party", "club", "sports", "event", "streaming"],
+    Transport: ["taxi", "bus", "train", "fuel", "car", "bike", "gas", "ride", "subway", "transportation", "parking", "uber", "lyft"],
+    Utilities: ["electricity", "water", "internet", "phone", "cable", "gas bill", "utilities", "electric", "wifi"],
+    Shopping: ["clothing", "electronics", "grocery", "store", "shopping", "purchase", "buy", "apparel", "fashion", "accessories"],
+    Health: ["medicine", "doctor", "hospital", "pharmacy", "health", "appointment", "clinic", "fitness", "gym", "wellness"],
+    Travel: ["flight", "hotel", "trip", "vacation", "airline", "resort", "tour", "cruise", "travel", "luggage", "passport"],
+    Bills: ["subscription", "insurance", "rent", "mortgage", "membership", "payment", "fee", "bill", "credit card", "loan", "tax"],
+    Gifts: ["gift", "present", "donation", "charity", "birthday", "holiday", "wedding", "celebration"],
+    Miscellaneous: [] 
+  };
 
-  // Check the name for keywords and return the category
-  if (foodKeywords.some(keyword => name.toLowerCase().includes(keyword))) {
-    return "Food";
+  const lowerCaseName = name.toLowerCase();
+
+  for (let category in categories) {
+    if (categories[category].some(keyword => lowerCaseName.includes(keyword))) {
+      return category;
+    }
   }
-  if (entertainmentKeywords.some(keyword => name.toLowerCase().includes(keyword))) {
-    return "Entertainment";
-  }
-  if (transportKeywords.some(keyword => name.toLowerCase().includes(keyword))) {
-    return "Transport";
-  }
-  if (utilitiesKeywords.some(keyword => name.toLowerCase().includes(keyword))) {
-    return "Utilities";
-  }
-  return "Miscellaneous"; // Default category
+  return "Miscellaneous";
 };
 
 const AddExpenseForm = ({ budgets }) => {

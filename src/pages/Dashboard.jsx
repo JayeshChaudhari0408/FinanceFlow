@@ -1,7 +1,6 @@
 // rrd imports
 import { Link, useLoaderData, Form } from "react-router-dom";
 
-import { TrashIcon } from '@heroicons/react/24/solid' 
 
 // library imports
 import { toast } from "react-toastify";
@@ -81,7 +80,6 @@ export async function dashboardAction({ request }) {
       });
       return toast.success(`Expense ${values.newExpense} created!`);
     } catch (e) {
-      // throw new Error("There was a problem creating your expense.");
       return toast.error(e.message);
     }
   }
@@ -104,24 +102,6 @@ const Dashboard = () => {
 
   return (
     <>
-    {/* {userName && (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Form
-            method="post"
-            action="logout"
-            onSubmit={(event) => {
-              if (!confirm("Delete user and all data?")) {
-                event.preventDefault()
-              }
-            }}
-          >
-            <button type="submit" className="btn btn--warning" style={{ display: 'flex', alignItems: 'center' } }>
-              <span>Delete User</span>
-              <TrashIcon width={20} />
-            </button>
-          </Form>
-        </div>
-      )} */}
       {userName ? (
         <div className="dashboard">
           <h1>

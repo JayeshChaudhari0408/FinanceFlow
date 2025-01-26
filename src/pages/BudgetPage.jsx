@@ -4,11 +4,9 @@ import { useState } from "react";
 
 // library
 import { toast } from "react-toastify";
-import { PencilIcon } from "@heroicons/react/24/outline";
 
 // components
 import AddExpenseForm from "../components/AddExpenseForm";
-import BudgetItem from "../components/BudgetItem";
 import Table1 from "../components/Table1";
 import EditBudgetForm from "../components/EditBudgetForm";
 import EditButton from "../components/EditButton";

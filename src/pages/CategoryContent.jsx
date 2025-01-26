@@ -1,8 +1,7 @@
 import React from 'react'
 
 import { useParams, useNavigate } from 'react-router-dom';
-import { getAllMatchingItems } from '../localStorage';  // Function that fetches the expenses
-import BudgetPage from './BudgetPage';
+import { getAllMatchingItems } from '../localStorage'; 
 export async function categoryLoader() {
   const budget = await getAllMatchingItems({
     category: "budgets",
@@ -16,7 +15,6 @@ const CategoryContent = () => {
   const { category} = useParams();  // Get the category from the URL
 
   const expenses = getAllMatchingItems({ category: 'expenses' });
-  const budgetNewId = expenses.budgetId  // Assuming you're fetching all expenses from localStorage
   const budId = localStorage.getItem("budId");
   console.log("expenses",expenses);
   console.log("Budget ID:", budId );

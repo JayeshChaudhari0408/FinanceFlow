@@ -2,7 +2,7 @@
 import { Form, Link } from "react-router-dom";
 
 // library imports
-import { BanknotesIcon, TrashIcon, PencilIcon } from "@heroicons/react/24/outline";
+import { BanknotesIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 import {
   calculateSpentByBudget,
